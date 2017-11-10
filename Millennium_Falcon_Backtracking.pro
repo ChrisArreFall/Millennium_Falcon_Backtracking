@@ -28,14 +28,12 @@ SOURCES += \
     backtracking.cpp \
     Base.cpp \
     MillenniumFalcon.cpp \
-    Asteroid.cpp \
-    player.cpp
+    Asteroid.cpp
 
 HEADERS += \
     backtracking.h \
     Base.h \
     MillenniumFalcon.h \
-    Asteroid.h \
-    player.h
+    Asteroid.h
 
 FORMS +=

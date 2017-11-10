@@ -1,18 +1,33 @@
-#ifndef MILLENNIUMFALCON_H
-#define MILLENNIUMFALCON_H
+#ifndef MILENIUMFALCON_H
+#define MILENIUMFALCON_H
+#include <QGraphicsRectItem>
 #include <QObject>
-#include <QGraphicsItem>
+#include "backtracking.h"
 #include <list>
 
-class MillenniumFalcon : public QObject,public QGraphicsItem{
+class mileniumFalcon: public QObject,public QGraphicsRectItem{
     Q_OBJECT
 public:
-    MillenniumFalcon();
-    QRectF boundingRect() const override;
-    QPainterPath shape() const override;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget) override;
+    mileniumFalcon();
+    Backtracking backtracking;
+    std::list<position> genAsteroidPos();
+
+    int contadorB;
+    int contadorLR;
+    void moveAux();
+
+    bool up;
+    bool down;
+    bool front;
+    bool back;
+    bool LR;
+
+    std::list<int> posHistory;
+
 public slots:
     void move();
+    void spawn();
+
 };
 
-#endif // MILLENNIUMFALCON_H
+#endif // MILENIUMFALCON_H

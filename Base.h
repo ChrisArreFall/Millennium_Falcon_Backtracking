@@ -2,15 +2,11 @@
 #define BASE_H
 
 #include <QGraphicsItem>
+#include <QGraphicsRectItem>
+#include <QObject>
 
-class Base : public QGraphicsItem{
+class Base: public QObject,public QGraphicsRectItem{
 public:
     Base();
-    QRectF boundingRect() const override;
-
-    QPainterPath shape() const override;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-               QWidget *widget) override;
-
 };
 #endif // BASE_H
