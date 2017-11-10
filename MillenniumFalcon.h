@@ -1,15 +1,15 @@
 #ifndef MILENIUMFALCON_H
 #define MILENIUMFALCON_H
-#include <QGraphicsRectItem>
-#include <QObject>
 #include "backtracking.h"
 #include <list>
+#include <QObject>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsItem>
 
-class mileniumFalcon: public QObject,public QGraphicsRectItem{
+class mileniumFalcon: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     mileniumFalcon();
-    Backtracking backtracking;
     std::list<position> genAsteroidPos();
 
     int contadorB;

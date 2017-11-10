@@ -1,8 +1,10 @@
 #include "Base.h"
 #include <QGraphicsScene>
 #include <QDebug>
-Base::Base(): QObject(), QGraphicsRectItem(){
+#include <QGraphicsPixmapItem>
+Base::Base(){
     // drew the rect
-    setRect(0,0,30,30);
-    setPos(770,185);
+    //setRect(0,0,30,30);
+    setPixmap(QPixmap("/Users/Christopher/Millennium_Falcon_Backtracking/img/base.png"));
+    setPos(720,185);
 }

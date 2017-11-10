@@ -9,6 +9,7 @@
 #include <fstream>
 #include <unistd.h>
 #include <ctime>
+
 /*
  * front = 1
  * back = 2
@@ -17,7 +18,7 @@
  */
 
 
-mileniumFalcon::mileniumFalcon(): QObject(), QGraphicsRectItem(){
+mileniumFalcon::mileniumFalcon(){
     up = false;
     down = false;
     front = true;
@@ -29,8 +30,9 @@ mileniumFalcon::mileniumFalcon(): QObject(), QGraphicsRectItem(){
 
     posHistory.push_front(1);
     // drew the rect
-    setRect(0,0,10,10);
-
+    //setRect(0,0,10,10);
+    setPixmap(QPixmap("/Users/Christopher/Millennium_Falcon_Backtracking/img/nave.png"));
+    setPos(0,200);
     // connect
 
     QTimer * timer = new QTimer(this);
@@ -40,6 +42,9 @@ mileniumFalcon::mileniumFalcon(): QObject(), QGraphicsRectItem(){
 
 
 }
+
+
+
 
 std::list<position> mileniumFalcon::genAsteroidPos()
 {
@@ -83,11 +88,11 @@ void mileniumFalcon::moveAux(){
 
 void mileniumFalcon::move(){
     // move enemy down
-    if(pos().x()>=760){
-        if(pos().y()>195){
+    if(pos().x()>=710){
+        if(pos().y()>205){
             setPos(pos().x(),pos().y()-1);
         }
-        else if(pos().y()<195){
+        else if(pos().y()<205){
             setPos(pos().x(),pos().y()+1);
         }
         else{
